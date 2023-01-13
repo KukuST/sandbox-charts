@@ -1,0 +1,66 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "cattle.io/status": "{\"Conditions\":[{\"Type\":\"ResourceQuotaInit\",\"Status\":\"True\",\"Message\":\"\",\"LastUpdateTime\":\"2023-01-08T23:39:09Z\"},{\"Type\":\"InitialRolesPopulated\",\"Status\":\"True\",\"Message\":\"\",\"LastUpdateTime\":\"2023-01-08T23:39:15Z\"}]}",
+            "field.cattle.io/projectId": "local:p-s6q8s",
+            "lifecycle.cattle.io/create.namespace-auth": "true",
+            "management.cattle.io/no-default-sa-token": "true"
+        },
+        "creationTimestamp": "2023-01-08T23:37:37Z",
+        "deletionTimestamp": "2023-01-08T23:48:36Z",
+        "labels": {
+            "field.cattle.io/projectId": "p-s6q8s",
+            "kubernetes.io/metadata.name": "cattle-system",
+            "name": "cattle-system"
+        },
+        "name": "cattle-system",
+        "resourceVersion": "220853",
+        "uid": "be0033b0-94a4-47ac-b08a-53e1c6553591"
+    },
+    "spec": {
+        "finalizers": [
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2023-01-08T23:48:42Z",
+                "message": "All resources successfully discovered",
+                "reason": "ResourcesDiscovered",
+                "status": "False",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2023-01-08T23:48:42Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2023-01-08T23:48:42Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2023-01-08T23:48:42Z",
+                "message": "Some resources are remaining: rolebindings.rbac.authorization.k8s.io has 1 resource instances, roles.rbac.authorization.k8s.io has 1 resource instances",
+                "reason": "SomeResourcesRemain",
+                "status": "True",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2023-01-08T23:48:42Z",
+                "message": "Some content in the namespace has finalizers remaining: wrangler.cattle.io/auth-prov-v2-rb in 1 resource instances, wrangler.cattle.io/auth-prov-v2-role in 1 resource instances",
+                "reason": "SomeFinalizersRemain",
+                "status": "True",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
